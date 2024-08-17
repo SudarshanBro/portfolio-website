@@ -12,14 +12,14 @@
   $contact->ajax = true;
   
   $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+  $contact->from_name = $_GET['name'];
+  $contact->from_email = $_GET['email'];
+  $contact->subject = $_GET['subject'];
 
   
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+  $contact->add_message( $_GET['name'], 'From');
+  $contact->add_message( $_GET['email'], 'Email');
+  $contact->add_message( $_GET['message'], 'Message', 10);
 
   echo $contact->send();
 ?>
